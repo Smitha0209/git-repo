@@ -42,7 +42,7 @@ export class AppService {
     }
 
     getReadmeContent(readmeUrl): Observable<HttpResponse<Object>> {
-        return this.http.get<HttpResponse<Object>>('https://angular-http-guide.firebaseio.com/courses.json', {observe: 'response'})
+        return this.http.get<HttpResponse<Object>>(readmeUrl, {observe: 'response'})
             .pipe(
                 catchError(this.handleError)
             );
